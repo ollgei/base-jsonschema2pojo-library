@@ -1,2 +1,2 @@
 # base-swagger-annotator
-swagger for jsonsecha2pojo
+swagger for jsonschema2pojo
