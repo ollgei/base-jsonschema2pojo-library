@@ -1,4 +1,4 @@
-package com.github.ollgei.base.swagger.annotator;
+package com.github.ollgei.base.jsonschema2pojo.annotator;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.sun.codemodel.JAnnotationUse;
