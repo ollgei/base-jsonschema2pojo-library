@@ -12,7 +12,7 @@
 
     <groupId>com.github.ollgei.base</groupId>
     <artifactId>base-jsonschema2pojo-library</artifactId>
-    <version>1.0.0.RC1</version>
+    <version>1.0.0.RC2</version>
 
     <inceptionYear>2020</inceptionYear>
 
@@ -25,13 +25,13 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/ollgei/base-swagger-annotator</url>
-        <connection>scm:git:https://github.com/ollgei/base-swagger-annotator.git</connection>
-        <developerConnection>scm:git:https://github.com/ollgei/base-swagger-annotator.git</developerConnection>
+        <url>https://github.com/ollgei/base-jsonschema2pojo-library</url>
+        <connection>scm:git:https://github.com/ollgei/base-jsonschema2pojo-library.git</connection>
+        <developerConnection>scm:git:https://github.com/ollgei/base-jsonschema2pojo-library.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
-    <!-- dubbo -->
+    <!-- mail -->
     <mailingLists>
         <mailingList>
             <name>Development List</name>
@@ -53,6 +53,7 @@
         </mailingList>
     </mailingLists>
 
+    <!-- developer -->
     <developers>
         <developer>
             <id>ollgei.github.com</id>
@@ -66,7 +67,7 @@
 
     <issueManagement>
         <system>Github Issues</system>
-        <url>https://github.com/ollgei/base-swagger-annotator/issues</url>
+        <url>https://github.com/ollgei/base-jsonschema2pojo-library/issues</url>
     </issueManagement>
 
     <properties>

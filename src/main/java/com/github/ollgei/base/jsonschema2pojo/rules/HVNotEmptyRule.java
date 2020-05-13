@@ -2,7 +2,7 @@ package com.github.ollgei.base.jsonschema2pojo.rules;
 
 import java.util.Arrays;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.ollgei.base.jsonschema2pojo.SpecPojoRuleFactory;
@@ -14,15 +14,15 @@ import org.jsonschema2pojo.rules.Rule;
 
 /**
  *  hiberanate validator NotBlank rule.
- * {@link NotBlank}
+ * {@link javax.validation.constraints.NotEmpty}
  * @author jiawei
  * @since 1.0.0
  */
-public class HVNotBlankRule implements Rule<JFieldVar, JFieldVar> {
+public class HVNotEmptyRule implements Rule<JFieldVar, JFieldVar> {
 
     private final SpecPojoRuleFactory ruleFactory;
 
-    public HVNotBlankRule(SpecPojoRuleFactory ruleFactory) {
+    public HVNotEmptyRule(SpecPojoRuleFactory ruleFactory) {
         this.ruleFactory = ruleFactory;
     }
 
@@ -30,15 +30,15 @@ public class HVNotBlankRule implements Rule<JFieldVar, JFieldVar> {
     public JFieldVar apply(String nodeName, JsonNode node, JsonNode parent, JFieldVar field, Schema currentSchema) {
 
         if (ruleFactory.getGenerationConfig().isIncludeJsr303Annotations()
-                && node.has("notBlank") && isApplicableType(field)) {
-            if (node.get("notBlank").asBoolean()) {
-                JAnnotationUse annotation = field.annotate(NotBlank.class);
-                if (node.has("notBlankMessage")) {
-                    annotation.param("message", node.get("notBlankMessage").asText());
+                && node.has("notEmpty") && isApplicableType(field)) {
+            if (node.get("notEmpty").asBoolean()) {
+                final JAnnotationUse annotation = field.annotate(NotEmpty.class);
+                if (node.has("notEmptyMessage")) {
+                    annotation.param("message", node.get("notEmptyMessage").asText());
                 }
-                if (node.has("notBlankGroups")) {
+                if (node.has("notEmptyGroups")) {
                     final JAnnotationArrayMember groups = annotation.paramArray("groups");
-                    Arrays.asList(node.get("notBlankGroups").asText().split(",")).stream().forEach(name -> {
+                    Arrays.asList(node.get("notEmptyGroups").asText().split(",")).stream().forEach(name -> {
                         try {
                             groups.param(Class.forName(name));
                         } catch (ClassNotFoundException e) {

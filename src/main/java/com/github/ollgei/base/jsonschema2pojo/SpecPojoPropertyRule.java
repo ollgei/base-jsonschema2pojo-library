@@ -28,6 +28,8 @@ public class SpecPojoPropertyRule extends PropertyRule {
 
         specPojoRuleFactory.getHVNotBlankRule().apply(nodeName, node, parent, field, schema);
 
+        specPojoRuleFactory.getHVNotEmptyRule().apply(nodeName, node, parent, field, schema);
+
         return jclass;
     }
 }

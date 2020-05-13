@@ -1,6 +1,7 @@
 package com.github.ollgei.base.jsonschema2pojo;
 
 import com.github.ollgei.base.jsonschema2pojo.rules.HVNotBlankRule;
+import com.github.ollgei.base.jsonschema2pojo.rules.HVNotEmptyRule;
 import com.sun.codemodel.JDefinedClass;
 import com.sun.codemodel.JFieldVar;
 import org.jsonschema2pojo.rules.Rule;
@@ -21,5 +22,9 @@ public class SpecPojoRuleFactory extends RuleFactory {
 
     public Rule<JFieldVar, JFieldVar> getHVNotBlankRule() {
         return new HVNotBlankRule(this);
+    }
+
+    public Rule<JFieldVar, JFieldVar> getHVNotEmptyRule() {
+        return new HVNotEmptyRule(this);
     }
 }
